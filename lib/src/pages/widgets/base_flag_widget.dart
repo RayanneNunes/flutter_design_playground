@@ -12,7 +12,7 @@ class BaseFlagWidget extends StatelessWidget {
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
         decoration: BoxDecoration(
-          border: Border.all(color: Colors.black, width: 2),
+          border: Border.all(color: Colors.white, width: 2),
         ),
         child: flag,
       ),

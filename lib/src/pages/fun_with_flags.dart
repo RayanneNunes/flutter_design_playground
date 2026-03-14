@@ -11,11 +11,11 @@ class FunWithFlagsPage extends StatelessWidget {
       body: Column(
         children: [
           BaseFlagWidget(
-            flag: Row(
+            flag: Stack(
               children: [
-                Expanded(child: Container(color: Colors.red)),
                 Expanded(child: Container(color: Colors.white)),
-                Expanded(child: Container(color: Colors.black)),
+                Expanded(child: Container(margin: EdgeInsets.all(50), decoration: BoxDecoration(color: Colors.red, shape: BoxShape.circle))),
+                
               ],
             ),
           ),                 

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_design_playground/src/pages/fun_with_flags.dart';
 import 'package:flutter_design_playground/src/pages/home_page.dart';
 
 // Stateless Widget
@@ -12,6 +11,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Design Playground',
+      theme: ThemeData(colorSchemeSeed: Colors.red, brightness: Brightness.dark),
       home: HomePage(),
     );
   }

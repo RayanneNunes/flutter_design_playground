@@ -7,10 +7,8 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade200,
       appBar: AppBar(
-        backgroundColor: Colors.red.shade400,
-        title: Text('Home Page', style: TextStyle(color: Colors.white54)),
+        title: Text('Home Page'),
       ),
       body: Column(
         mainAxisSize: MainAxisSize.max,
