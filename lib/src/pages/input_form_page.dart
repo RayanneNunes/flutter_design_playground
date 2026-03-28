@@ -1,4 +1,6 @@
+import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_design_playground/src/pages/widgets/forum_card_widget.dart';
 
 class InputFormPage extends StatefulWidget {
   const InputFormPage({super.key});
@@ -77,6 +79,12 @@ class _InputFormPageState extends State<InputFormPage> {
                 });
               },
             ),
+            ...List.generate(10, (index) => ForumCardWidget(
+              title: faker.lorem.sentence(),
+              tag: faker.lorem.word(),
+              commentCount: faker.randomGenerator.integer(100),
+              author: faker.person.name(),
+            )),
           ],
         ),
       ),
