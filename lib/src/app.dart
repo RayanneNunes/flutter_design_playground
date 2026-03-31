@@ -22,7 +22,7 @@ class App extends StatelessWidget {
         '/fun-with-flags': (context) => FunWithFlagsPage(),
         '/design-grid': (context) => GridFlagPage(),
         '/input-form': (context) => InputFormPage(),
-        '/products': (context) => ProductsPage(),
+        '/products': (context) => ProductCategoryPage(),
       },
     );
   }

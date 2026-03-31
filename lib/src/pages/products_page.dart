@@ -3,8 +3,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-class ProductsPage extends StatelessWidget {
-  const ProductsPage({super.key});
+class ProductCategoryPage extends StatelessWidget {
+  const ProductCategoryPage({super.key});
 
   @override
   Widget build(BuildContext context) {
