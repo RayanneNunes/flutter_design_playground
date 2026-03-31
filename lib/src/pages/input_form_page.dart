@@ -13,6 +13,7 @@ class _InputFormPageState extends State<InputFormPage> {
   final textController = TextEditingController();
   bool switchValue = false;
   double sliderValue = 0;
+  String selectedLanguage = 'Java';
 
   @override
   Widget build(BuildContext context) {
@@ -22,25 +23,7 @@ class _InputFormPageState extends State<InputFormPage> {
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: ListView(
           children: [
-            TextField(
-              controller: textController,
-              decoration: InputDecoration(
-                labelText: 'Digite algo',
-                hintText: 'Digite algo',
-                border: OutlineInputBorder(),
-                filled: true,
-                prefixIcon: Icon(Icons.search),
-              ),
-              onChanged: (value) {
-                print('onChanged: value: $value');
-              },
-              onEditingComplete: () {
-                print('onEditingComplete');
-              },
-              onSubmitted: (value) {
-                print('onSubmitted: value: $value');
-              },
-            ),
+            Text('Botões', style: Theme.of(context).textTheme.headlineMedium),
             FilledButton(
               onPressed: () {
                 print('Button pressed: ${textController.text}');
@@ -59,14 +42,25 @@ class _InputFormPageState extends State<InputFormPage> {
             ElevatedButton(onPressed: () {}, child: Text('ELEVATED BUTTON')),
             TextButton(onPressed: () {}, child: Text('TEXT BUTTON')),
             OutlinedButton(onPressed: () {}, child: Text('OUTLINED BUTTON')),
-            Switch(
-              value: switchValue,
-              onChanged: (value) {
-                setState(() {
-                  switchValue = value;
-                });
-              },
+            UnconstrainedBox(
+              child: IconButton(onPressed: () {}, icon: Icon(Icons.add)),
             ),
+            UnconstrainedBox(
+              child: IconButton.filled(onPressed: () {}, icon: Icon(Icons.add)),
+            ),
+            UnconstrainedBox(
+              child: IconButton.filledTonal(
+                onPressed: () {},
+                icon: Icon(Icons.add),
+              ),
+            ),
+            UnconstrainedBox(
+              child: IconButton.outlined(
+                onPressed: () {},
+                icon: Icon(Icons.add),
+              ),
+            ),
+            Text('Slider', style: Theme.of(context).textTheme.headlineMedium),
             Slider(
               divisions: 10,
               label: 'Valor Slider: ${sliderValue.toStringAsFixed(1)}',
@@ -79,12 +73,31 @@ class _InputFormPageState extends State<InputFormPage> {
                 });
               },
             ),
-            ...List.generate(10, (index) => ForumCardWidget(
-              title: faker.lorem.sentence(),
-              tag: faker.lorem.word(),
-              commentCount: faker.randomGenerator.integer(100),
-              author: faker.person.name(),
-            )),
+            Text(
+              'Seleção Única',
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            SwitchListTile(
+              title: Text('Switch List Tile'),
+              secondary: Icon(Icons.info),
+              value: switchValue,
+              onChanged: (value) {
+                setState(() {
+                  switchValue = value;
+                });
+              },
+            ),
+            Switch(
+              value: switchValue,
+              onChanged: (value) {
+                setState(() {
+                  switchValue = value;
+                });
+              },
+            ),
+            ...['Santos', 'São Paulo', 'Palmeiras'].map((e) {
+              return Radio(value: e, groupValue: 'times', onChanged: (value) {});
+            }),
           ],
         ),
       ),

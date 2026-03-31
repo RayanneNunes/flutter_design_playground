@@ -28,7 +28,7 @@ class ForumCardWidget extends StatelessWidget {
                   label: Text(tag),
                   // backgroundColor: Colors.red.shade100,
                   color: WidgetStatePropertyAll(color.shade100),
-                  labelStyle: TextStyle(color: color.shade400),
+                  labelStyle: TextStyle(color: color.shade600),
                   side: BorderSide.none,
                 ),
                 Padding(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_design_playground/src/pages/fun_with_flags.dart';
 import 'package:flutter_design_playground/src/pages/home_page.dart';
 import 'package:flutter_design_playground/src/pages/input_form_page.dart';
+import 'package:flutter_design_playground/src/pages/products_page.dart';
 import 'package:flutter_design_playground/src/pages/widgets/grid_flag_page.dart';
 
 // Stateless Widget
@@ -21,6 +22,7 @@ class App extends StatelessWidget {
         '/fun-with-flags': (context) => FunWithFlagsPage(),
         '/design-grid': (context) => GridFlagPage(),
         '/input-form': (context) => InputFormPage(),
+        '/products': (context) => ProductsPage(),
       },
     );
   }
