@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_design_playground/src/pages/fun_with_flags.dart';
 import 'package:flutter_design_playground/src/pages/home_page.dart';
 import 'package:flutter_design_playground/src/pages/input_form_page.dart';
-import 'package:flutter_design_playground/src/pages/products_page.dart';
+import 'package:flutter_design_playground/src/pages/products_categories_page.dart';
 import 'package:flutter_design_playground/src/pages/widgets/grid_flag_page.dart';
 
 // Stateless Widget
