@@ -40,14 +40,19 @@ class ProductCategoryPage extends StatelessWidget {
             itemBuilder: (context, index) {
               final color = Colors.primaries[index % Colors.primaries.length];
               final categoria = json[index]['name'];
-              return Card(
-                color: color.shade100,
-                child: Center(
-                  child: Text(
-                    categoria,
-                    style: Theme.of(
-                      context,
-                    ).textTheme.titleLarge?.copyWith(color: color.shade800),
+              return GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, '/products-category');
+                },
+                child: Card(
+                  color: color.shade100,
+                  child: Center(
+                    child: Text(
+                      categoria,
+                      style: Theme.of(
+                        context,
+                      ).textTheme.titleLarge?.copyWith(color: color.shade800),
+                    ),
                   ),
                 ),
               );
