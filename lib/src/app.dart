@@ -24,7 +24,7 @@ class App extends StatelessWidget {
         '/design-grid': (context) => GridFlagPage(),
         '/input-form': (context) => InputFormPage(),
         '/products': (context) => ProductCategoryPage(),
-        '/products-category': (context) => ProductsPage(),
+        '/products-category': (context) => ProductsPage(slug: 'beauty'),
       },
     );
   }
