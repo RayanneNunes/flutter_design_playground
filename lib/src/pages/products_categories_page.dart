@@ -40,9 +40,10 @@ class ProductCategoryPage extends StatelessWidget {
             itemBuilder: (context, index) {
               final color = Colors.primaries[index % Colors.primaries.length];
               final categoria = json[index]['name'];
+              final slug = json[index]['slug'];
               return GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, '/products-category');
+                  Navigator.pushNamed(context, '/products-category', arguments: slug);
                 },
                 child: Card(
                   color: color.shade100,

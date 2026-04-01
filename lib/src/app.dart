@@ -17,14 +17,14 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Design Playground',
       theme: ThemeData(colorSchemeSeed: Colors.red, brightness: Brightness.light),
-      initialRoute: '/products-category',
+      initialRoute: '/',
       routes: {
         '/': (context) => HomePage(),
         '/fun-with-flags': (context) => FunWithFlagsPage(),
         '/design-grid': (context) => GridFlagPage(),
         '/input-form': (context) => InputFormPage(),
         '/products': (context) => ProductCategoryPage(),
-        '/products-category': (context) => ProductsPage(slug: 'beauty'),
+        '/products-category': (context) => ProductsPage(),
       },
     );
   }

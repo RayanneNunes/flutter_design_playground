@@ -5,12 +5,12 @@ import 'package:flutter_design_playground/src/domain/product_domain.dart';
 import 'package:http/http.dart';
 
 class ProductsPage extends StatelessWidget {
-  const ProductsPage({super.key, required this.slug});
-
-  final String slug;
+  const ProductsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final String slug = ModalRoute.of(context)!.settings.arguments as String;
+    
     return Scaffold(
       appBar: AppBar(title: Text('Produtos')),
       body: FutureBuilder(
