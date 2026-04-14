@@ -1,39 +1,26 @@
-class ProductDomain {
-  final int id;
-  final String title;
-  final String description;
-  final String sku;
-  final double price;
-  final String brand;
-  final String category;
-  final String thumbnail;
-  final List<String> images;
+import 'package:flutter_design_playground/src/domain/review_domain.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  ProductDomain({
-    required this.id,
-    required this.title,
-    required this.description,
-    required this.sku,
-    required this.price,
-    required this.brand,
-    required this.category,
-    required this.thumbnail,
-    required this.images,
-  });
+part 'product_domain.freezed.dart';
+part 'product_domain.g.dart'; 
 
-  factory ProductDomain.fromJson(Map<String, dynamic> json) {
-    return ProductDomain(
-      id: json['id'],
-      title: json['title'],
-      description: json['description'],
-      sku: json['sku'],
-      price: json['price'],
-      brand: json['brand'] ?? 'No Brand',
-      category: json['category'] ?? 'No Category',
-      thumbnail: json['thumbnail'] ?? '',
-      images: List<String>.from(json['images'] ?? []),
-    );
-  }
+@freezed  
+abstract class ProductDomain with _$ProductDomain {
+
+  factory ProductDomain({
+    required int id,
+    required String title   ,
+    required String description,
+    required String sku,
+    required double price,
+    String? brand,
+    required String category,
+    required String thumbnail,
+    required List<String>images,
+    required List<ReviewDomain> reviews,
+  }) = _ProductDomain;
+
+  factory ProductDomain.fromJson(Map<String, dynamic> json) => _$ProductDomainFromJson(json);
 }
 
 /**
